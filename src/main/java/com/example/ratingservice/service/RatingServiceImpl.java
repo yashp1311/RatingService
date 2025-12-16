@@ -32,6 +32,16 @@ public class RatingServiceImpl implements RatingService {
     }
 
     @Override
+    public List<Rating> getRatingsByHotelId(String hotelId) {
+        return ratingRepository.findByHotelId(hotelId);
+    }
+
+    @Override
+    public List<Rating> getRatingsByUserId(String userId) {
+        return ratingRepository.findByUserId(userId);
+    }
+
+    @Override
     public Rating createRating(Rating rating) {
         rating.setCreatedAt(LocalDateTime.now().format(dateFormatter));
         rating.setUpdatedAt(LocalDateTime.now().format(dateFormatter));

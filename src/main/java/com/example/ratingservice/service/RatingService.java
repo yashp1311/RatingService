@@ -10,6 +10,10 @@ public interface RatingService {
 
     public Rating getRatingById(String id);
 
+    List<Rating> getRatingsByHotelId(String hotelId);
+
+    List<Rating> getRatingsByUserId(String userId);
+
     public Rating createRating(Rating rating);
 
     public void deleteRating(String id);
